@@ -16,7 +16,7 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { desc = "LSP Format" })
+		vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format, { desc = "Format" })
 
 		-- Run eslint_d  on save
 		vim.api.nvim_create_autocmd("BufWritePre", {
