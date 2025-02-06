@@ -10,6 +10,8 @@ return {
     config = function()
       local cmp = require("cmp")
 
+      require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/snippets" })
+
       cmp.setup({
         snippet = {
           expand = function(args)
