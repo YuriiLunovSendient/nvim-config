@@ -10,6 +10,14 @@ return {
 		config = function()
 			vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>")
 			vim.keymap.set("n", "<leader>1", ":Neotree filesystem reveal left<CR>")
+
+			require("neo-tree").setup({
+				filesystem = {
+					filtered_items = {
+						hide_dotfiles = false,
+					},
+				},
+			})
 		end,
 	},
 }
