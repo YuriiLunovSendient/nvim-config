@@ -4,7 +4,9 @@ return {
 		tag = "0.1.8",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
-			require("telescope").setup({
+			local telescope = require("telescope")
+
+			telescope.setup({
 				defaults = {
 					layout_strategy = "vertical",
 					sorting_strategy = "ascending",
@@ -21,6 +23,7 @@ return {
 			vim.keymap.set("n", "<leader>fo", builtin.oldfiles, { desc = "Find Old (Recent) Files" })
 			vim.keymap.set("n", "<leader>fg", builtin.git_files, { desc = "Find Git Files" })
 			vim.keymap.set("n", "<leader>fc", builtin.git_status, { desc = "Find Changed Git Files" })
+			vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find Buffers" })
 			vim.keymap.set("n", "<leader>fr", builtin.lsp_references, { desc = "Find References" })
 		end,
 	},

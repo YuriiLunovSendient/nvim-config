@@ -6,9 +6,11 @@ return {
 			"L3MON4D3/LuaSnip",
 			"saadparwaiz1/cmp_luasnip",
 			"rafamadriz/friendly-snippets",
+			"roobert/tailwindcss-colorizer-cmp.nvim",
 		},
 		config = function()
 			local cmp = require("cmp")
+			local tailwindcssColorizer = require("tailwindcss-colorizer-cmp")
 
 			require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/snippets" })
 
@@ -35,6 +37,7 @@ return {
 				}, {
 					{ name = "buffer" },
 				}),
+				formatting = { format = require("tailwindcss-colorizer-cmp").formatter },
 			})
 		end,
 	},
