@@ -10,7 +10,6 @@ return {
 		},
 		config = function()
 			local cmp = require("cmp")
-			local tailwindcssColorizer = require("tailwindcss-colorizer-cmp")
 
 			require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/snippets" })
 
