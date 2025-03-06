@@ -50,6 +50,12 @@ return {
 			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "Go References" })
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
 			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
+			vim.keymap.set("n", "<leader>oi", function()
+				vim.lsp.buf.code_action({
+					context = { only = { "source.organizeImports" } },
+					apply = true,
+				})
+			end, { desc = "Organize Imports" })
 		end,
 	},
 }
