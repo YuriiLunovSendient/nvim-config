@@ -26,10 +26,11 @@ return {
 			vim.keymap.set("n", "<leader>fs", builtin.live_grep, { desc = "Find String (Grep)" })
 			vim.keymap.set("n", "<leader>fw", builtin.grep_string, { desc = "Find Word" })
 			vim.keymap.set("n", "<leader>fo", builtin.oldfiles, { desc = "Find Old (Recent) Files" })
-			vim.keymap.set("n", "<leader>fg", builtin.git_files, { desc = "Find Git Files" })
-			vim.keymap.set("n", "<leader>fc", builtin.git_status, { desc = "Find Changed Git Files" })
 			vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find Buffers" })
 			vim.keymap.set("n", "<leader>fr", builtin.lsp_references, { desc = "Find References" })
+			vim.keymap.set("n", "<leader>fgf", builtin.git_files, { desc = "Find Git Files" })
+			vim.keymap.set("n", "<leader>fgs", builtin.git_status, { desc = "Find Git Status" })
+			vim.keymap.set("n", "<leader>fgb", builtin.git_branches, { desc = "Find Branches" })
 		end,
 	},
 	{
