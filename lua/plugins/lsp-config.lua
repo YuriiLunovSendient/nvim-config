@@ -27,6 +27,9 @@ return {
 
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
+				format = {
+					enable = false,
+				},
 			})
 
 			lspconfig.ts_ls.setup({
