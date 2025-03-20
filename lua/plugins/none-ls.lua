@@ -8,11 +8,7 @@ return {
 
 		null_ls.setup({
 			sources = {
-				null_ls.builtins.formatting.stylua,
 				require("none-ls.code_actions.eslint_d"),
-				require("none-ls.formatting.eslint_d"),
-
-				vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format, {}),
 			},
 		})
 	end,
