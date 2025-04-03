@@ -22,3 +22,12 @@ vim.keymap.set("n", "<leader>tv", ":vsplit | terminal<CR>", { noremap = true, si
 
 vim.keymap.set("n", "<leader>sv", ":vsplit<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>sh", ":split<CR>", { noremap = true, silent = true })
+
+vim.keymap.set({ "n", "v" }, "<leader>bd", ":bd<CR>", { noremap = true, silent = true, desc = "Close current buffer" })
+vim.keymap.set({ "n", "v" }, "<leader>bo", function()
+	for _, n in ipairs(vim.api.nvim_list_bufs()) do
+		if n ~= vim.api.nvim_get_current_buf() then
+			vim.api.nvim_buf_delete(n, {})
+		end
+	end
+end, { noremap = true, silent = true, desc = "Close other buffers" })
