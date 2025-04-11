@@ -16,6 +16,9 @@ return {
 					},
 				},
 				pickers = {
+					find_files = {
+						find_command = { "rg", "--files", "--sortr=modified" },
+					},
 					oldfiles = {
 						only_cwd = true,
 					},
