@@ -15,6 +15,7 @@ return {
 					"html",
 					"cssls",
 					"tailwindcss",
+					"pyright",
 				},
 			})
 		end,
@@ -25,11 +26,20 @@ return {
 			local lspconfig = require("lspconfig")
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-			local servers = { "lua_ls", "ts_ls", "html", "cssls", "tailwindcss" }
-			for _, server in ipairs(servers) do
-				lspconfig[server].setup({
-					capabilities = capabilities,
-				})
+			local servers = {
+				lua_ls = {},
+				ts_ls = {},
+				html = {},
+				cssls = {},
+				tailwindcss = {},
+				pyright = {
+					filetypes = { "python" },
+				},
+			}
+
+			for server, config in pairs(servers) do
+				config.capabilities = capabilities
+				lspconfig[server].setup(config)
 			end
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Documentation" })
