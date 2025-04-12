@@ -25,25 +25,12 @@ return {
 			local lspconfig = require("lspconfig")
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-			lspconfig.lua_ls.setup({
-				capabilities = capabilities,
-			})
-
-			lspconfig.ts_ls.setup({
-				capabilities = capabilities,
-			})
-
-			lspconfig.html.setup({
-				capabilities = capabilities,
-			})
-
-			lspconfig.cssls.setup({
-				capabilities = capabilities,
-			})
-
-			lspconfig.tailwindcss.setup({
-				capabilities = capabilities,
-			})
+			local servers = { "lua_ls", "ts_ls", "html", "cssls", "tailwindcss" }
+			for _, server in ipairs(servers) do
+				lspconfig[server].setup({
+					capabilities = capabilities,
+				})
+			end
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Documentation" })
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Go Definition" })
