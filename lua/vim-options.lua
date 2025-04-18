@@ -37,6 +37,13 @@ vim.keymap.set(
 -- Editor
 vim.keymap.set("n", "<leader>sv", ":vsplit<CR>", { noremap = true, silent = true, desc = "[S]plit [V]ertically" })
 vim.keymap.set("n", "<leader>sh", ":split<CR>", { noremap = true, silent = true, desc = "[S]plit [H]orizontally" })
+vim.keymap.set({ "n", "v" }, "<leader>cw", ":close<CR>", { noremap = true, silent = true, desc = "[C]lose [W]indow" })
+vim.keymap.set(
+	{ "n", "v" },
+	"<leader>cq",
+	":cclose<CR>",
+	{ noremap = true, silent = true, desc = "[C]lose [Q]uickfixes" }
+)
 
 -- Buffer
 vim.keymap.set({ "n", "v" }, "<leader>bd", ":bd<CR>", { noremap = true, silent = true, desc = "[B]uffer [D]elete" })

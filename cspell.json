@@ -1,0 +1,16 @@
+{
+  "language": "en",
+  "version": "0.2",
+  "flagWords": [],
+  "words": [
+    "nvimtools",
+    "nvim",
+    "keymap",
+    "lspconfig",
+    "pyright",
+    "cssls",
+    "williamboman",
+    "mapleader"
+  ]
+}
+

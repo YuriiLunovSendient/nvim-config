@@ -18,8 +18,8 @@ return {
 			})
 			require("lsp-file-operations").setup()
 
-			vim.keymap.set("n", "<leader>e", ":Neotree toggle reveal=true<CR>")
-			-- vim.keymap.set("n", "<leader>1", ":Neotree reveal=true<CR>")
+			vim.keymap.set("n", "<leader>e", ":Neotree toggle reveal=true<CR>", { desc = "Toggle NeoTree" })
+			vim.keymap.set("n", "<leader>1", ":Neotree reveal=true<CR>", { desc = "Reveal File in NeoTree" })
 		end,
 	},
 }
