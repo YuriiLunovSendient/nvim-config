@@ -25,15 +25,37 @@ return {
 				},
 			})
 			local builtin = require("telescope.builtin")
+
+			local find_word_or_selection = function()
+				local text = ""
+				if vim.fn.mode() == "v" or vim.fn.mode() == "V" then
+					-- Visual mode: get selected text
+					vim.cmd('normal! "vy')
+					text = vim.fn.getreg("v")
+				else
+					-- Normal mode: get word under cursor
+					text = vim.fn.expand("<cword>")
+				end
+				builtin.grep_string({ search = text })
+			end
+
 			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]iles" })
-			vim.keymap.set("n", "<leader>fs", builtin.live_grep, { desc = "[F]ind [S]tring (Grep)" })
-			vim.keymap.set("n", "<leader>fw", builtin.grep_string, { desc = "[F]ind [W]ord" })
-			vim.keymap.set("n", "<leader>fo", builtin.oldfiles, { desc = "[F]ind [O]ld Files" })
+			vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[F]ind [G]rep" })
+			vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "[F]ind [R]ecent" })
 			vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "[F]ind [B]uffers" })
-			vim.keymap.set("n", "<leader>fr", builtin.lsp_references, { desc = "[F]ind [R]eferences" })
-			vim.keymap.set("n", "<leader>fgf", builtin.git_files, { desc = "[F]ind [G]it [F]iles" })
-			vim.keymap.set("n", "<leader>fgs", builtin.git_status, { desc = "[F]ind [G]it [S]tatus" })
-			vim.keymap.set("n", "<leader>fgb", builtin.git_branches, { desc = "[F]ind [G]it [B]ranches" })
+			vim.keymap.set(
+				{ "n", "v" },
+				"<leader>fw",
+				find_word_or_selection,
+				{ noremap = true, silent = true, desc = "[F]ind current [W]ord/selection" }
+			)
+
+			vim.keymap.set("n", "<leader>gr", builtin.lsp_references, { desc = "[G]oto [R]eferences" })
+
+			vim.keymap.set("n", "<leader>gf", builtin.git_files, { desc = "[G]it [F]iles" })
+			vim.keymap.set("n", "<leader>gs", builtin.git_status, { desc = "[G]it [S]tatus" })
+			vim.keymap.set("n", "<leader>gb", builtin.git_branches, { desc = "[G]it [B]ranches" })
+			vim.keymap.set("n", "<leader>gc", builtin.git_commits, { desc = "[G]it [C]ommits" })
 		end,
 	},
 	{

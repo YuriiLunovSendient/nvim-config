@@ -10,13 +10,14 @@ vim.opt.breakindent = true
 vim.opt.autoindent = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.showmode = false
+vim.opt.termguicolors = true
 
-vim.diagnostic.config({
-	virtual_text = true, -- shows the inline text
-	signs = true,
-	underline = true,
-	update_in_insert = false,
-})
+-- Treesitter folding setup
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
 
 -- Keybindings --
 
@@ -35,8 +36,24 @@ vim.keymap.set(
 )
 
 -- Editor
-vim.keymap.set("n", "<leader>sv", ":vsplit<CR>", { noremap = true, silent = true, desc = "[S]plit [V]ertically" })
-vim.keymap.set("n", "<leader>sh", ":split<CR>", { noremap = true, silent = true, desc = "[S]plit [H]orizontally" })
+vim.keymap.set({ "n", "v" }, "\\", '"_', { noremap = true, silent = true, desc = "Black hole register" })
+
+vim.keymap.set({ "n", "v" }, "<leader>w", ":w<CR>", { noremap = true, silent = true, desc = "[W]rite" })
+vim.keymap.set({ "n", "v" }, "<leader>q", ":q<CR>", { noremap = true, silent = true, desc = "[Q]uit" })
+
+vim.keymap.set(
+	{ "n", "v" },
+	"<leader>sv",
+	":vsplit<CR>",
+	{ noremap = true, silent = true, desc = "[S]plit [V]ertically" }
+)
+vim.keymap.set(
+	{ "n", "v" },
+	"<leader>sh",
+	":split<CR>",
+	{ noremap = true, silent = true, desc = "[S]plit [H]orizontally" }
+)
+
 vim.keymap.set({ "n", "v" }, "<leader>cw", ":close<CR>", { noremap = true, silent = true, desc = "[C]lose [W]indow" })
 vim.keymap.set(
 	{ "n", "v" },
