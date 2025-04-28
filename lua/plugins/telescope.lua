@@ -49,6 +49,7 @@ return {
 				find_word_or_selection,
 				{ noremap = true, silent = true, desc = "[F]ind current [W]ord/selection" }
 			)
+			vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "[F]ind [K]eymaps" })
 
 			vim.keymap.set("n", "<leader>gr", builtin.lsp_references, { desc = "[G]oto [R]eferences" })
 
