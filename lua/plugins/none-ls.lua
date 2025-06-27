@@ -9,7 +9,13 @@ return {
 		-- local cspell = require("cspell")
 		local eslint_diagnostics = require("none-ls.diagnostics.eslint_d").with({
 			condition = function(utils)
-				return utils.root_has_file({ ".eslintrc.js", ".eslintrc.json", ".eslintrc.cjs", "eslint.config.mjs" })
+				return utils.root_has_file({
+					".eslintrc.js",
+					".eslintrc.json",
+					".eslintrc.cjs",
+					"eslint.config.mjs",
+					"eslint.config.js",
+				})
 			end,
 		})
 		local eslint_code_actions = require("none-ls.code_actions.eslint_d")

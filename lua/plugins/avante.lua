@@ -4,19 +4,26 @@ return {
 	lazy = false,
 	version = false,
 	opts = {
-		provider = "copilot",
-		copilot = {
-			endpoint = "https://api.githubcopilot.com",
-			model = "gpt-4o-2024-08-06",
-			timeout = 30000,
-			temperature = 0,
-			max_tokens = 4096,
+		provider = "gemini",
+		providers = {
+			copilot = {
+				endpoint = "https://api.githubcopilot.com",
+				model = "gpt-4o-2024-08-06",
+				timeout = 30000,
+				extra_request_body = {
+					options = {
+						temperature = 0,
+						max_tokens = 4096,
+					},
+				},
+			},
+			gemini = {
+				model = "gemini-2.5-flash",
+				temperature = 0,
+				max_tokens = 4096,
+			},
 		},
-		gemini = {
-			model = "gemini-2.5-pro-exp-03-25",
-			temperature = 0,
-			max_tokens = 4096,
-		},
+		enable_cursor_planning_mode = true, -- enable cursor planning mode!
 	},
 	build = "make",
 	dependencies = {
