@@ -19,21 +19,42 @@ vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 
--- Keybindings --
+-- Diagnostics configuration
+vim.diagnostic.config({
+	severity_sort = true,
+	float = { border = "rounded", source = "if_many" },
+	underline = { severity = vim.diagnostic.severity.ERROR },
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = "󰅚 ",
+			[vim.diagnostic.severity.WARN] = "󰀪 ",
+			[vim.diagnostic.severity.INFO] = "󰋽 ",
+			[vim.diagnostic.severity.HINT] = "󰌶 ",
+		},
+	},
+	virtual_text = {
+		source = "if_many",
+		spacing = 2,
+		format = function(diagnostic)
+			local diagnostic_message = {
+				[vim.diagnostic.severity.ERROR] = diagnostic.message,
+				[vim.diagnostic.severity.WARN] = diagnostic.message,
+				[vim.diagnostic.severity.INFO] = diagnostic.message,
+				[vim.diagnostic.severity.HINT] = diagnostic.message,
+			}
+			return diagnostic_message[diagnostic.severity]
+		end,
+	},
+})
 
--- Terminal
-vim.keymap.set(
-	"n",
-	"<leader>th",
-	":belowright split | resize 20 | terminal<CR>",
-	{ noremap = true, silent = true, desc = "[T]erminal [H]orizontally" }
-)
-vim.keymap.set(
-	"n",
-	"<leader>tv",
-	":vsplit | terminal<CR>",
-	{ noremap = true, silent = true, desc = "[T]erminal [V]ertically" }
-)
+------ Keybindings -------
+-- LSP
+vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Documentation" })
+vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "[G]oto [D]efinition" })
+-- -- vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "[G]oto [R]eferences" }) -- LSP References from telescope is used
+vim.keymap.set("n", "<leader>gi", vim.lsp.buf.implementation, { desc = "[G]oto [I]mplementation" })
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "[C]ode [A]ction" })
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "[R]e[n]ame" })
 
 -- Editor
 vim.keymap.set({ "n", "v" }, "\\", '"_', { noremap = true, silent = true, desc = "Black hole register" })

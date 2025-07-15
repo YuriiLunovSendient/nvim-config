@@ -4,7 +4,7 @@ return {
 	lazy = false,
 	version = false,
 	opts = {
-		provider = "gemini",
+		provider = "copilot",
 		providers = {
 			copilot = {
 				endpoint = "https://api.githubcopilot.com",

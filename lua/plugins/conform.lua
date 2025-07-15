@@ -9,7 +9,7 @@ return {
 				lua = { "stylua" },
 				javascript = { "eslint_d", "prettier" },
 				javascriptreact = { "eslint_d" },
-				typescript = { "eslint_d" },
+				typescript = { "eslint_d", "prettier" },
 				typescriptreact = { "eslint_d" },
 				html = { "prettier" },
 				css = { "prettier" },
