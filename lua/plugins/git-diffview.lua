@@ -12,6 +12,5 @@ return {
 		vim.keymap.set("n", "<leader>dvv", ":DiffviewOpen<CR>", { desc = "[D]iff [V]iew" })
 		vim.keymap.set("n", "<leader>dvc", ":DiffviewClose<CR>", { desc = "[D]iff [V]iew [C]lose" })
 		vim.keymap.set("n", "<leader>dvf", ":DiffviewFile %<CR>", { desc = "[D]iff [V]iew [F]ile" })
-		vim.keymap.set("n", "<leader>dvh", ":DiffviewFileHistory %<CR>", { desc = "[D]iff [V]iew [H]istory" })
 	end,
 }
