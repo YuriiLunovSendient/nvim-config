@@ -14,9 +14,21 @@ return {
 						mirror = true,
 						prompt_position = "top",
 					},
+					file_ignore_patterns = {
+						"node_modules/",
+						"dist/",
+						"build/",
+						".git/",
+						".git-crypt/",
+						".cursor/",
+						".vscode/",
+						".idea/",
+						".devcontainer/",
+					},
 				},
 				pickers = {
 					find_files = {
+						hidden = true,
 						find_command = { "rg", "--files", "--sortr=modified" },
 					},
 					oldfiles = {
