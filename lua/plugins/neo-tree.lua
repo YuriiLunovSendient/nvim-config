@@ -1,25 +1,21 @@
 return {
-	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v3.x",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons",
-			"MunifTanjim/nui.nvim",
-			"antosha417/nvim-lsp-file-operations",
-		},
-		config = function()
-			require("neo-tree").setup({
-				filesystem = {
-					filtered_items = {
-						hide_dotfiles = false,
-					},
-				},
-			})
-			require("lsp-file-operations").setup()
-
-			vim.keymap.set("n", "<leader>e", ":Neotree toggle reveal=true<CR>", { desc = "Toggle NeoTree" })
-			vim.keymap.set("n", "<leader>1", ":Neotree reveal=true<CR>", { desc = "Reveal File in NeoTree" })
-		end,
+	"nvim-neo-tree/neo-tree.nvim",
+	branch = "v3.x",
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		"MunifTanjim/nui.nvim",
+		"nvim-tree/nvim-web-devicons",
 	},
+	config = function()
+		require("neo-tree").setup({
+			filesystem = {
+				filtered_items = {
+					hide_dotfiles = false,
+				},
+			},
+		})
+
+		vim.keymap.set("n", "<leader>e", ":Neotree toggle reveal=true<CR>", { desc = "Toggle NeoTree" })
+		vim.keymap.set("n", "<leader>1", ":Neotree reveal=true<CR>", { desc = "Reveal File in NeoTree" })
+	end,
 }
