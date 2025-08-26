@@ -56,6 +56,12 @@ vim.keymap.set("n", "<leader>gi", vim.lsp.buf.implementation, { desc = "[G]oto [
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "[C]ode [A]ction" })
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "[R]e[n]ame" })
 
+-- Panels
+vim.keymap.set("n", "<C-k>", ":wincmd k<CR>", { desc = "Move to upper window" })
+vim.keymap.set("n", "<C-j>", ":wincmd j<CR>", { desc = "Move to lower window" })
+vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", { desc = "Move to left window" })
+vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", { desc = "Move to right window" })
+
 -- Editor
 vim.keymap.set({ "n", "v" }, "\\", '"_', { noremap = true, silent = true, desc = "Black hole register" })
 
