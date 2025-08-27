@@ -13,7 +13,6 @@ return {
 					hide_dotfiles = false,
 				},
 			},
-			use_libuv_file_watcher = true,
 		})
 
 		vim.keymap.set("n", "<leader>e", ":Neotree toggle reveal=true<CR>", { desc = "Toggle NeoTree" })
