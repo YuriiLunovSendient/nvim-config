@@ -48,3 +48,7 @@ end, { noremap = true, silent = true, desc = "[R]e[n]ame" })
 vim.keymap.set("n", "K", function()
 	vscode.action("editor.action.showHover")
 end, { noremap = true, silent = true, desc = "Show Hover" })
+
+vim.keymap.set("n", "za", function()
+	vscode.action("editor.toggleFold")
+end, { noremap = true, silent = true, desc = "Toggle Fold" })

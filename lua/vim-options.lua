@@ -14,6 +14,7 @@ vim.opt.autoindent = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.showmode = false
 vim.opt.termguicolors = true
+vim.opt.colorcolumn = "120"
 
 -- Treesitter folding setup
 vim.o.foldmethod = "expr"
@@ -101,3 +102,4 @@ vim.keymap.set({ "n", "v" }, "<leader>bo", function()
 		end
 	end
 end, { noremap = true, silent = true, desc = "[B]uffer delete [O]ther" })
+vim.keymap.set("n", "<leader>br", ":bufdo e!<CR>", { noremap = true, silent = true, desc = "[B]uffer [R]efresh" })

@@ -11,7 +11,21 @@ local function get_filename()
 end
 
 local snippets = {
+	-- Console log
+	s("clg", {
+		t("console.log("),
+		i(1),
+		t(")"),
+	}),
+
 	-- Interface default inline
+	s("intdi", {
+		t({ "export default interface " }),
+		get_filename(),
+		t({ "{", "\t" }),
+		i(0),
+		t({ "", "}" }),
+	}),
 }
 
 local languages = {
