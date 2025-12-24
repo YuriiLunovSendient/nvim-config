@@ -70,7 +70,7 @@ vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", { desc = "Move to right window" })
 vim.keymap.set({ "n", "v" }, "\\", '"_', { noremap = true, silent = true, desc = "Black hole register" })
 
 vim.keymap.set({ "n", "v" }, "<leader>w", ":w<CR>", { noremap = true, silent = true, desc = "[W]rite" })
-vim.keymap.set({ "n", "v" }, "<leader>q", ":q<CR>", { noremap = true, silent = true, desc = "[Q]uit" })
+-- vim.keymap.set({ "n", "v" }, "<leader>q", ":q<CR>", { noremap = true, silent = true, desc = "[Q]uit" })
 
 vim.keymap.set(
 	{ "n", "v" },

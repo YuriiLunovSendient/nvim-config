@@ -1,5 +1,5 @@
 vim.lsp.enable({
-	"ts_ls",
+	"vtsls",
 	"html",
 	"cssls",
 	"tailwindcss",
