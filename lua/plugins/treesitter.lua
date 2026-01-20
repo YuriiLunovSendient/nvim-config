@@ -8,11 +8,43 @@ return {
 		})
 
 		-- Install parsers (async, runs on startup)
-		require("nvim-treesitter").install({ "lua", "javascript", "typescript", "tsx", "html", "css" })
+		require("nvim-treesitter").install({
+			"lua",
+			"javascript",
+			"typescript",
+			"tsx",
+			"html",
+			"css",
+			"json",
+			"jsonc",
+			"markdown",
+			"markdown_inline",
+			"vim",
+			"vimdoc",
+			"bash",
+			"yaml",
+			"toml",
+		})
 
 		-- Enable treesitter highlighting, indentation, and folding
 		vim.api.nvim_create_autocmd("FileType", {
-			pattern = { "lua", "javascript", "typescript", "typescriptreact", "html", "css", "json", "markdown" },
+			pattern = {
+				"lua",
+				"javascript",
+				"typescript",
+				"typescriptreact",
+				"html",
+				"css",
+				"json",
+				"jsonc",
+				"markdown",
+				"vim",
+				"help",
+				"bash",
+				"sh",
+				"yaml",
+				"toml",
+			},
 			callback = function()
 				-- Highlighting
 				vim.treesitter.start()
