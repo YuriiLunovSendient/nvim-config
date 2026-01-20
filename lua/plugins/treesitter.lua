@@ -16,7 +16,6 @@ return {
 			"html",
 			"css",
 			"json",
-			"jsonc",
 			"markdown",
 			"markdown_inline",
 			"vim",
