@@ -16,13 +16,6 @@ vim.opt.showmode = false
 vim.opt.termguicolors = true
 vim.opt.colorcolumn = "120"
 
--- Treesitter folding setup
-vim.o.foldmethod = "expr"
-vim.o.foldexpr = "nvim_treesitter#foldexpr()"
-vim.o.foldlevel = 99
-vim.o.foldlevelstart = 99
-vim.o.foldenable = true
-
 -- Diagnostics configuration
 vim.diagnostic.config({
 	severity_sort = true,
