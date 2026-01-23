@@ -1,22 +1,5 @@
 local vscode = require("vscode")
 
-vim.g.mapleader = " "
-vim.opt.clipboard = "unnamedplus"
-
--- Commands
--- Disable Cursor Tab in normal mode
-vim.api.nvim_create_autocmd("InsertLeave", {
-	callback = function()
-		require("vscode").action("editor.cpp.disableenabled")
-	end,
-})
-vim.api.nvim_create_autocmd("InsertEnter", {
-	callback = function()
-		require("vscode").action("editor.action.enableCppGlobally")
-	end,
-})
-
--- Keybindings
 vim.keymap.set({ "n", "v" }, "\\", '"_', { noremap = true, silent = true, desc = "Black hole register" })
 
 vim.keymap.set({ "n", "v" }, "<leader>w", function()
