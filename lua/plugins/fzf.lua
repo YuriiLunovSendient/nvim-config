@@ -13,6 +13,9 @@ return {
 					vertical = "down:70%",
 				},
 			},
+			files = {
+				rg_opts = [[--color=never --hidden --files -g "!.git" --sortr=modified]],
+			},
 			oldfiles = {
 				cwd_only = true,
 			},
