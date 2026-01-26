@@ -9,6 +9,23 @@ return {
 			winopts = {
 				backdrop = false,
 			},
+			oldfiles = {
+				cwd_only = true,
+			},
+			lsp = {
+				code_actions = {
+					winopts = {
+						width = 0.4,
+						height = 0.3,
+						row = 0.5,
+						col = 0.5,
+
+						preview = {
+							hidden = true,
+						},
+					},
+				},
+			},
 			keymap = {
 				builtin = {
 					["<C-d>"] = "preview-page-down",
@@ -27,6 +44,8 @@ return {
 				},
 			},
 		})
+
+		fzfLua.register_ui_select()
 
 		vim.keymap.set("n", "<leader>ff", function()
 			fzfLua.files()
@@ -63,5 +82,9 @@ return {
 		vim.keymap.set("n", "<leader>gc", function()
 			fzfLua.git_commits()
 		end, { desc = "[G]it [C]ommits" })
+
+		vim.keymap.set("n", "<leader>ca", function()
+			fzfLua.lsp_code_actions()
+		end, { desc = "[C]ode [A]ctions" })
 	end,
 }
