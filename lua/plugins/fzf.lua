@@ -8,6 +8,10 @@ return {
 		fzfLua.setup({
 			winopts = {
 				backdrop = false,
+				preview = {
+					layout = "vertical",
+					vertical = "down:70%",
+				},
 			},
 			oldfiles = {
 				cwd_only = true,
