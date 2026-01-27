@@ -4,7 +4,24 @@ return {
 	lazy = false,
 	opts = {
 		explorer = { enabled = true },
-		picker = { enabled = true },
+		picker = {
+			enabled = true,
+			sources = {
+				recent = {
+					filter = {
+						cwd = true,
+					},
+				},
+			},
+			win = {
+				input = {
+					keys = {
+						["<C-d>"] = { "preview_scroll_down", mode = { "i", "n" } },
+						["<C-u>"] = { "preview_scroll_up", mode = { "i", "n" } },
+					},
+				},
+			},
+		},
 		input = { enabled = true },
 		lazygit = { enabled = true },
 		indent = { enable = true },
@@ -18,6 +35,7 @@ return {
 			end,
 			desc = "File Explorer",
 		},
+
 		-- find
 		{
 			"<leader>ff",
