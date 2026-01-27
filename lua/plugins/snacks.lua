@@ -7,6 +7,14 @@ return {
 		lazygit = { enabled = true },
 	},
 	keys = {
+		-- explorer
+		{
+			"<leader>e",
+			function()
+				Snacks.explorer()
+			end,
+			desc = "File Explorer",
+		},
 		-- find
 		{
 			"<leader>ff",
