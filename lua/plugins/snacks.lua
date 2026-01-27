@@ -5,6 +5,7 @@ return {
 	opts = {
 		picker = { enabled = true },
 		lazygit = { enabled = true },
+		indent = { enable = true },
 	},
 	keys = {
 		-- explorer
