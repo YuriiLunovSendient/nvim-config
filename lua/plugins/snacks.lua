@@ -25,6 +25,7 @@ return {
 		input = { enabled = true },
 		lazygit = { enabled = true },
 		indent = { enable = true },
+		dashboard = { enabled = true },
 	},
 	keys = {
 		-- explorer
