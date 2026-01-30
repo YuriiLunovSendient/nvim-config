@@ -24,7 +24,12 @@ return {
 		},
 		input = { enabled = true },
 		lazygit = { enabled = true },
-		indent = { enable = true },
+		indent = {
+			enable = true,
+			animate = {
+				enabled = false,
+			},
+		},
 		dashboard = {
 			enabled = true,
 			sections = {
