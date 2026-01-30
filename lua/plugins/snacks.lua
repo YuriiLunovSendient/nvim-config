@@ -25,7 +25,15 @@ return {
 		input = { enabled = true },
 		lazygit = { enabled = true },
 		indent = { enable = true },
-		dashboard = { enabled = true },
+		dashboard = {
+			enabled = true,
+			sections = {
+				{ section = "header" },
+				{ icon = " ", title = "Recent Files", padding = 1 },
+				{ section = "recent_files", cwd = true, padding = 1 },
+				{ section = "startup" },
+			},
+		},
 	},
 	keys = {
 		-- explorer
