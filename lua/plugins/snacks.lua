@@ -78,7 +78,7 @@ return {
 				Snacks.picker.grep_word()
 			end,
 			desc = "[F]ind [S]election",
-			mode = { "n", "x" },
+			mode = { "v" },
 		},
 		{
 			"<leader>fb",
