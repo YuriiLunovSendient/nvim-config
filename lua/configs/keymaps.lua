@@ -48,6 +48,8 @@ vim.keymap.set({ "n", "v" }, "<leader>bo", function()
 	end
 end, { noremap = true, silent = true, desc = "[B]uffer delete [O]ther" })
 vim.keymap.set("n", "<leader>br", ":bufdo e!<CR>", { noremap = true, silent = true, desc = "[B]uffer [R]efresh" })
+vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { noremap = true, silent = true, desc = "[B]uffer [N]ext" })
+vim.keymap.set("n", "<leader>bp", ":bprevious<CR>", { noremap = true, silent = true, desc = "[B]uffer [P]revious" })
 
 -- Move lines up and down
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { noremap = true, silent = true, desc = "Move line down" })
