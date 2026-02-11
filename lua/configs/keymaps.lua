@@ -56,3 +56,23 @@ vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { noremap = true, silent = true, de
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { noremap = true, silent = true, desc = "Move line up" })
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true, desc = "Move line down" })
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true, desc = "Move line up" })
+
+-- Yank file path
+vim.keymap.set("n", "<leader>yp", function()
+	local path = vim.fn.expand("%:p")
+	vim.fn.setreg("+", path)
+	print("Copied file path: " .. path)
+end, { noremap = true, silent = true, desc = "[C]opy [F]ile path" })
+
+vim.keymap.set("v", "<leader>yp", function()
+	local path = vim.fn.expand("%:p")
+	local start_line = vim.fn.line("v")
+	local end_line = vim.fn.line(".")
+	if start_line > end_line then
+		start_line, end_line = end_line, start_line
+	end
+
+	local value = string.format("%s %d:%d", path, start_line, end_line)
+	vim.fn.setreg("+", value)
+	print("Copied file path with selection: " .. value)
+end, { noremap = true, silent = true, desc = "[C]opy [F]ile path (selection)" })
