@@ -19,5 +19,6 @@ require("configs.options")
 require("configs.keymaps")
 require("configs.lsp")
 require("configs.autocommands")
+require("configs.builtins")
 
 require("lazy").setup("plugins")
