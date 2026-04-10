@@ -16,6 +16,7 @@ vim.opt.showmode = false
 vim.opt.termguicolors = true
 vim.opt.colorcolumn = "120"
 vim.opt.autoread = true
+vim.opt.fillchars = { eob = " " }
 
 vim.diagnostic.config({
 	severity_sort = true,
