@@ -3,4 +3,6 @@ vim.lsp.enable({
 	"html",
 	"cssls",
 	"tailwindcss",
+	"dockerls",
+	"docker-compose-langserver",
 })
