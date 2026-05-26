@@ -6,6 +6,7 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 		vscode.action("editor.cpp.disableenabled")
 	end,
 })
+
 vim.api.nvim_create_autocmd("InsertEnter", {
 	callback = function()
 		vscode.action("editor.action.enableCppGlobally")

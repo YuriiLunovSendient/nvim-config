@@ -1,3 +1,5 @@
-vim.pack.add({ "https://github.com/mason-org/mason.nvim" })
+if not vim.g.vscode then
+	vim.pack.add({ "https://github.com/mason-org/mason.nvim" })
 
-require("mason").setup()
+	require("mason").setup()
+end
