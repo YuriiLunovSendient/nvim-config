@@ -51,6 +51,18 @@ vim.keymap.set("n", "<leader>br", ":bufdo e!<CR>", { noremap = true, silent = tr
 vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { noremap = true, silent = true, desc = "[B]uffer [N]ext" })
 vim.keymap.set("n", "<leader>bp", ":bprevious<CR>", { noremap = true, silent = true, desc = "[B]uffer [P]revious" })
 
+if vim.uv.os_uname().sysname == "Darwin" then
+	vim.keymap.set("n", "<leader>of", function()
+		local path = vim.fn.expand("%:p")
+		if path == "" then
+			vim.notify("Current buffer has no file path", vim.log.levels.WARN)
+			return
+		end
+
+		vim.fn.jobstart({ "open", "-R", path }, { detach = true })
+	end, { noremap = true, silent = true, desc = "[O]pen in [F]inder" })
+end
+
 -- Move lines up and down
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { noremap = true, silent = true, desc = "Move line down" })
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { noremap = true, silent = true, desc = "Move line up" })
